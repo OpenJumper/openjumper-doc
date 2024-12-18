@@ -4,6 +4,6 @@
 **https://openjumper.com**  
 
 # OpenJumper中文文档：  
-**https://diandeng.tech/com**  
+**https://openjumper.com/doc**  
 
 点灯官网版本文档使用[mdSDS](https://github.com/coloz/mdSDS)构建  

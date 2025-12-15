@@ -500,4 +500,4 @@ import serial
 ```
 ## 库文件下载
 
-[mind+库下载](http://download.openjumper.cn/ext-TTS.rar)
+[mind+库下载](http://download.openjumper.cn/openjumper-openjumperminliball-thirdex-V0.0.5-20241031.mpext)

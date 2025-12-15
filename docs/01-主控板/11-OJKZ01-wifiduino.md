@@ -77,9 +77,7 @@ WiFiduino-8266是使用esp8266作为核心的开发板，相对于传统Arduino�
 
 ## 示例程序
 
-[ArduinoIDE运行wifiduino示例程序](https://openjumper.cn/kit04001/)
-
-[mixly图形化编程运行wifiduino示例程序](https://openjumper.cn/mixly-wifiduino/)
+[ArduinoIDE运行wifiduino示例程序](https://arduino.me/s/7?aid=863)
 
 ## 其他资料
 

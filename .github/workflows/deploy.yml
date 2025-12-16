@@ -57,7 +57,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          local_path: './docs/*'
+          local_path: './docs/'
           remote_path: ${{ secrets.TARGET_DIR }}
           sftp_only: true
           args: '-o ConnectTimeout=5'
@@ -70,7 +70,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          local_path: './docs/*'
+          local_path: './docs/'
           remote_path: ${{ secrets.TARGET_DIR }}
           sftp_only: true
           delete_remote_files: true  # 全量部署时删除远程旧文件

@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FULL_DEPLOY: ${{ secrets.FULL_DEPLOY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,7 +32,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        if: secrets.FULL_DEPLOY != 'true'
+        if: env.FULL_DEPLOY != 'true'
         run: |
           # 获取变更的文件列表（只包含docs目录下的文件）
           CHANGED_FILES=$(git diff --name-only HEAD HEAD~1 | grep '^docs/' || true)
@@ -48,7 +50,7 @@ jobs:
           fi
 
       - name: Incremental Deploy (Changed files only)
-        if: secrets.FULL_DEPLOY != 'true' && steps.changed-files.outputs.has_changes == 'true'
+        if: env.FULL_DEPLOY != 'true' && steps.changed-files.outputs.has_changes == 'true'
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.HOST }}
@@ -61,7 +63,7 @@ jobs:
           args: '-o ConnectTimeout=5'
 
       - name: Full Deploy (All files)
-        if: secrets.FULL_DEPLOY == 'true'
+        if: env.FULL_DEPLOY == 'true'
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.HOST }}
